@@ -1,7 +1,96 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AR Aizen</title><link rel="stylesheet" href="style.css"></head><body>
-<div id="intro"><canvas id="fx"></canvas><div class="ui"><span>AR / 001</span><span>LOADING...</span></div><div class="stage"><div class="rings"></div><svg viewBox="0 0 500 500" class="a"><path class="leg l" d="M70 410C105 405 120 390 136 350L235 88C242 68 251 55 260 48"/><path class="leg r" d="M430 410C395 405 380 390 364 350L265 88C258 68 249 55 240 48"/><path class="slash" d="M145 333L382 180"/></svg><div id="shards"></div></div><b>AR AIZEN</b><small id="load">00%</small></div>
-<div id="site"><header><a>AR<span>.</span></a><nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
-<section class="hero"><div><small>CREATIVE DEVELOPER / DIGITAL BUILDER</small><h1>Building digital<br><i>experiences</i> with<br>an extra dimension.</h1><p>A clean portfolio with interactive details and a little 3D magic. Projects and more are <strong>coming soon.</strong></p><a class="btn" href="#work">Explore work ↘</a></div></section>
-<section id="work"><small>01 / SELECTED WORK</small><h2>Things I'm<br><i>building.</i></h2><div class="grid"><article><div class="orb"></div><h3>Project One</h3><p>Coming soon</p></article><article><div class="orb"></div><h3>Project Two</h3><p>Coming soon</p></article><article><div class="orb"></div><h3>Project Three</h3><p>Coming soon</p></article></div></section>
-<section id="about"><small>02 / ABOUT</small><h2>A little bit<br><i>about me.</i></h2><div class="about"><div class="orb big"></div><div><h3>I’m currently putting this portfolio together.</h3><p>My story, skills, experience and introduction will live here soon.</p></div></div></section>
-<section id="contact"><small>03 / CONTACT</small><h2>Let's make<br>something <i>great.</i></h2><p>Contact details and social links are coming soon.</p></section><footer>© 2026 AR Aizen</footer></div><script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AR Aizen — creative digital portfolio." />
+  <title>AR Aizen — Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="intro"><canvas id="fx"></canvas><div class="meta">AR / 001 <span>INITIALIZING</span></div><div class="stage"><div class="ring"></div>
+<div class="logo-wrap" aria-label="AR Aizen logo animation"><img class="logo logo-first" src="logo-first.png" alt="AR Aizen logo"><img class="logo logo-second" src="logo-second.png" alt=""></div><div id="shards"></div></div><div class="word">AR AIZEN</div><div id="pct">00%</div>
+</div>
+   <div id="site">
+  <header class="nav">
+    <a class="brand magnetic" href="#top" aria-label="AR Aizen home"><span class="brand-mark">A</span><span>AR AIZEN</span></a>
+    <nav>
+      <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta magnetic" href="#contact">Let's talk <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-orbit"></div>
+      <div class="eyebrow reveal"><span>01</span> DIGITAL CREATIVE / INDEPENDENT</div>
+      <h1 class="hero-title reveal"><span>Designing</span><em>digital</em><span>experiences.</span></h1>
+      <div class="hero-bottom reveal">
+        <p class="hero-copy">I turn ideas into distinctive digital experiences through design, technology and motion.</p>
+        <a class="circle-link magnetic" href="#work"><span>Explore<br>my work</span><b>↓</b></a>
+      </div>
+      <div class="scroll-hint"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section id="about" class="statement section">
+      <div class="section-label">02 / ABOUT</div>
+      <div class="statement-copy reveal">
+        <p class="kicker">A small studio mindset.</p>
+        <h2>I build work that feels <span>alive.</span></h2>
+        <p class="body-copy">From a blank canvas to the final interaction, every detail is designed to create a clear, memorable and modern experience.</p>
+      </div>
+      <div class="floating-symbol">✦</div>
+    </section>
+
+    <section id="services" class="services section">
+      <div class="section-label">03 / SERVICES</div>
+      <div class="service-intro"><h2>What I<br><span>create.</span></h2><p>Digital craft with a focus on clarity, character and interaction.</p></div>
+      <div class="service-list">
+        <article class="service"><span>01</span><h3>Web Design</h3><p>Distinctive interfaces, visual systems and responsive experiences.</p><b>↗</b></article>
+        <article class="service"><span>02</span><h3>Development</h3><p>Fast, polished front-end builds with thoughtful motion.</p><b>↗</b></article>
+        <article class="service"><span>03</span><h3>AI & Digital</h3><p>Useful digital products, experiments and intelligent workflows.</p><b>↗</b></article>
+        <article class="service"><span>04</span><h3>Motion</h3><p>Transitions, micro-interactions and visual storytelling.</p><b>↗</b></article>
+      </div>
+    </section>
+
+    <section id="work" class="work section">
+      <div class="work-head"><div class="section-label">04 / SELECTED WORK</div><p>Selected experiments & projects</p></div>
+      <div class="projects">
+        <article class="project project-large reveal"><div class="project-visual visual-one"><div class="visual-orb"></div><div class="visual-type">A<span>R</span></div></div><div class="project-info"><span>01 — BRAND / DIGITAL</span><h3>AR Aizen</h3><p>Identity, portfolio and interactive experience.</p><span class="view">View case ↗</span></div></article>
+        <article class="project project-split reveal"><div class="project-info"><span>02 — WEB EXPERIENCE</span><h3>Future<br>Interface</h3><p>A conceptual interface exploring light, space and motion.</p><span class="view">View case ↗</span></div><div class="project-visual visual-two"><div class="scanlines"></div><div class="big-number">02</div></div></article>
+        <article class="project project-large reveal"><div class="project-visual visual-three"><div class="grid-ball"></div><div class="ring"></div></div><div class="project-info"><span>03 — CREATIVE TECHNOLOGY</span><h3>Night Signal</h3><p>Experimental digital art direction and motion study.</p><span class="view">View case ↗</span></div></article>
+      </div>
+    </section>
+
+    <section class="manifesto section">
+      <div class="manifesto-word reveal">MAKE</div>
+      <div class="manifesto-word reveal">IT</div>
+      <div class="manifesto-word accent reveal">MATTER.</div>
+      <p>Good design should not only look different.<br>It should make people feel something.</p>
+    </section>
+
+    <section class="lab section">
+      <div class="section-label">05 / DIGITAL LAB</div>
+      <div class="lab-inner">
+        <div><span class="status-dot"></span> CURRENTLY EXPLORING</div>
+        <h2>Where design<br>meets <span>curiosity.</span></h2>
+        <p>Small experiments in AI, generative visuals, interactive web and motion. This space changes as new ideas become real.</p>
+        <div class="lab-cards"><div>AI / 01</div><div>WEB / 02</div><div>MOTION / 03</div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="section-label">06 / CONTACT</div>
+      <div class="contact-inner reveal"><p class="kicker">Have an idea?</p><h2>Let's create<br><span>something.</span></h2><a class="contact-button magnetic" href="mailto:hello@araizen.dev">Start a conversation <b>↗</b></a></div>
+      <div class="contact-bottom"><span>AR AIZEN © 2026</span><div><a href="#">GitHub</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div><span>BASED IN BANGLADESH</span></div>
+    </section>
+  </main>
+
+  <div class="cursor"><span></span></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

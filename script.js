@@ -1,2 +1,48 @@
-const shards=document.getElementById('shards');for(let i=0;i<38;i++){let s=document.createElement('i');let a=Math.random()*Math.PI*2,r=190+Math.random()*170;s.style.setProperty('--x',Math.cos(a)*r+'px');s.style.setProperty('--y',Math.sin(a)*r+'px');s.style.setProperty('--r',(Math.random()*180-90)+'deg');s.style.left='50%';s.style.top='50%';s.style.animationDelay=(.25+Math.random()*1.2)+'s';shards.appendChild(s)}let st=performance.now();function prog(t){let p=Math.min((t-st)/4700,1);document.getElementById('load').textContent=String(Math.round(p*100)).padStart(2,'0')+'%';if(p<1)requestAnimationFrame(prog)}requestAnimationFrame(prog);setTimeout(()=>{document.getElementById('intro').classList.add('hide');document.getElementById('site').classList.add('ready')},4700);setTimeout(()=>document.getElementById('intro').remove(),5900);
-const canvas=document.createElement('canvas');canvas.id='scene';document.getElementById('site').prepend(canvas);const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.1,100);camera.position.z=6;const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.6));const g=new THREE.Group();scene.add(g);let core=new THREE.Mesh(new THREE.IcosahedronGeometry(1.2,4),new THREE.MeshPhysicalMaterial({color:0x806f8f,metalness:.7,roughness:.25,clearcoat:1}));g.add(core);g.add(new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(1.3,2)),new THREE.LineBasicMaterial({color:0xb783df,transparent:true,opacity:.16})));scene.add(new THREE.AmbientLight(0xffffff,.8));let l=new THREE.PointLight(0xb77aff,15,12);l.position.set(3,2,4);scene.add(l);let x=0,y=0,tx=0,ty=0;addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});function loop(t){requestAnimationFrame(loop);x+=(tx-x)*.04;y+=(ty-y)*.04;g.rotation.y+=.002;g.rotation.x=y*.3+Math.sin(t*.0005)*.08;g.rotation.z=x*.1;g.position.x=x*.4;g.position.y=-y*.2;renderer.render(scene,camera)}requestAnimationFrame(loop);addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+const intro = document.getElementById("intro");
+const site = document.getElementById("site");
+
+const box = document.getElementById("shards");
+
+for(let i=0;i<46;i++){
+  let s=document.createElement("i"),
+      a=Math.random()*Math.PI*2,
+      r=220+Math.random()*210;
+
+  s.style.setProperty("--x",Math.cos(a)*r+"px");
+  s.style.setProperty("--y",Math.sin(a)*r+"px");
+  s.style.setProperty("--r",Math.random()*180-90+"deg");
+  s.style.animationDelay=.25+Math.random()*1.2+"s";
+  box.appendChild(s);
+}
+
+let t0=performance.now();
+
+function p(t){
+  let v=Math.min((t-t0)/4800,1);
+
+  document.getElementById("pct").textContent =
+    String(Math.round(v*100)).padStart(2,"0")+"%";
+
+  if(v<1) requestAnimationFrame(p);
+}
+
+requestAnimationFrame(p);
+
+setTimeout(()=>{
+  intro.classList.add("hide");
+  site.classList.add("ready");
+},4700);
+
+setTimeout(()=>intro.remove(),6000);
+
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const cursor=document.querySelector('.cursor');
+window.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
+document.querySelectorAll('a,.service,.project-visual').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('active'));el.addEventListener('mouseleave',()=>cursor.classList.remove('active'))});
+
+document.querySelectorAll('.magnetic').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)*.12;const y=(e.clientY-r.top-r.height/2)*.12;el.style.transform=`translate(${x}px,${y}px)`});el.addEventListener('mouseleave',()=>el.style.transform='')});
+
+
+window.addEventListener('scroll',()=>{const y=window.scrollY;document.documentElement.style.setProperty('--scroll',y);document.querySelector('.hero-orbit')?.style.setProperty('transform',`translateY(${y*.08}px) rotate(${y*.015}deg)`)});
